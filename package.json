@@ -4,16 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pretest":"npm run lint",
     "test": "mocha test -u bdd -R spec",
     "start": "node index.js",
     "start:dev": "node index.js 4000",
-    "lint":"jshint ."
-
+    "lint": "jshint .",
+    "compile:coffee": "coffee --compile --output ./lib ./src/coffee",
+    "compile:ts":"tsc --outDir ./lib --module commonjs ./src/type/typeCode.ts"
   },
-  "jshintConfig":{
-    "esnext":true,
-    "noyield":true
+  "jshintConfig": {
+    "esnext": true,
+    "noyield": true
   },
   "repository": {
     "type": "git",
@@ -26,9 +26,11 @@
   },
   "homepage": "https://github.com/rengokantai/psintronpmbuitool#readme",
   "devDependencies": {
+    "coffee-script": "^1.10.0",
     "mocha": "^2.4.5",
     "should": "^8.2.1",
-    "supertest": "^1.1.0"
+    "supertest": "^1.1.0",
+    "typescript": "^1.7.5"
   },
   "dependencies": {
     "koa": "^1.1.2"
