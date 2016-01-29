@@ -7,15 +7,15 @@
     "test": "mocha test -u bdd -R spec",
     "start": "node index.js",
     "start:dev": "node index.js 4000",
-    "lint": "jshint .",
+    "lint": "jshint index.js",
     "compile:coffee": "coffee --compile --output ./lib ./src/coffee",
     "compile:tsc": "tsc --outDir ./lib --module commonjs ./src/type/typeCode.ts",
     "compile": "npm run compile:coffee && npm run compile:tsc",
     "precompile": "npm run clean",
     "clean": "rimraf lib/*",
-    "build:bundle":"browserify ./lib/coffeeCode.js | uglifyjs -mc > ./lib/bundle.js",
-    "watch:test":"npm run test -- -R min -w"
-
+    "build:bundle": "browserify ./lib/coffeeCode.js | uglifyjs -mc > ./lib/bundle.js",
+    "watch:test": "npm run test -- -R min -w",
+    "watch:lint":"watch 'npm run lint' ."
   },
   "jshintConfig": {
     "esnext": true,
@@ -38,7 +38,8 @@
     "rimraf": "^2.5.1",
     "should": "^8.2.1",
     "supertest": "^1.1.0",
-    "typescript": "^1.7.5"
+    "typescript": "^1.7.5",
+    "watch": "^0.17.1"
   },
   "dependencies": {
     "koa": "^1.1.2"
