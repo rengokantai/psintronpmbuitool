@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test -u bdd -R spec"
+    "test": "mocha test -u bdd -R spec",
+    "start":"node index.js"
   },
   "repository": {
     "type": "git",
