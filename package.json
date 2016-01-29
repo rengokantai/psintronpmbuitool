@@ -14,7 +14,7 @@
     "precompile": "npm run clean",
     "clean": "rimraf lib/*",
     "build:bundle":"browserify ./lib/coffeeCode.js | uglifyjs -mc > ./lib/bundle.js",
-    "watch:test":"mocha test -u bdd -R min -w"
+    "watch:test":"npm run test -- -R min -w"
 
   },
   "jshintConfig": {
