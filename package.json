@@ -12,7 +12,8 @@
     "compile:tsc": "tsc --outDir ./lib --module commonjs ./src/type/typeCode.ts",
     "compile": "npm run compile:coffee && npm run compile:tsc",
     "precompile": "npm run clean",
-    "clean": "rimraf lib/*"
+    "clean": "rimraf lib/*",
+    "build:bundle": "browserify ./lib/typeCode.js -o ./lib/bundle.js"
   },
   "jshintConfig": {
     "esnext": true,
@@ -29,12 +30,14 @@
   },
   "homepage": "https://github.com/rengokantai/psintronpmbuitool#readme",
   "devDependencies": {
+    "browserify": "^13.0.0",
     "coffee-script": "^1.10.0",
     "mocha": "^2.4.5",
     "rimraf": "^2.5.1",
     "should": "^8.2.1",
     "supertest": "^1.1.0",
-    "typescript": "^1.7.5"
+    "typescript": "^1.7.5",
+    "uglifyjs": "^2.4.10"
   },
   "dependencies": {
     "koa": "^1.1.2"
