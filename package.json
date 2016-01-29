@@ -4,10 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pretest":"echo 'beforerun'",
+    "pretest":"npm run lint",
     "test": "mocha test -u bdd -R spec",
     "start": "node index.js",
-    "start:dev": "node index.js 4000"
+    "start:dev": "node index.js 4000",
+    "lint":"jshint ."
+
+  },
+  "jshintConfig":{
+    "esnext":true,
+    "noyield":true
   },
   "repository": {
     "type": "git",
