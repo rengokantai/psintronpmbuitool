@@ -7,5 +7,7 @@ app.use(function *(){
     this.body = "koa";
 });
 
-app.listen(3000);
-console.log("start");
+var port = process.env.PORT || (process.argv[2]||3000);
+
+app.listen(port);
+console.log("start"+ port);
