@@ -11,7 +11,7 @@
     "compile:coffee": "coffee --compile --output ./lib ./src/coffee",
     "compile:tsc": "tsc --outDir ./lib --module commonjs ./src/type/typeCode.ts",
     "compile": "npm run compile:coffee && npm run compile:tsc",
-    "precompile": "rm -rf lib/*.*",
+    "precompile": "npm run clean",
     "clean": "rimraf lib/*"
   },
   "jshintConfig": {
