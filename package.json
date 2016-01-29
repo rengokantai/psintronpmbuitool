@@ -13,7 +13,8 @@
     "compile": "npm run compile:coffee && npm run compile:tsc",
     "precompile": "npm run clean",
     "clean": "rimraf lib/*",
-    "build:bundle": "browserify ./lib/typeCode.js -o ./lib/bundle.js"
+    "build:bundle":"browserify ./lib/coffeeCode.js | uglifyjs -mc > ./lib/bundle.js"
+
   },
   "jshintConfig": {
     "esnext": true,
@@ -36,8 +37,7 @@
     "rimraf": "^2.5.1",
     "should": "^8.2.1",
     "supertest": "^1.1.0",
-    "typescript": "^1.7.5",
-    "uglifyjs": "^2.4.10"
+    "typescript": "^1.7.5"
   },
   "dependencies": {
     "koa": "^1.1.2"
