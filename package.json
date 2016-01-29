@@ -13,7 +13,8 @@
     "compile": "npm run compile:coffee && npm run compile:tsc",
     "precompile": "npm run clean",
     "clean": "rimraf lib/*",
-    "build:bundle":"browserify ./lib/coffeeCode.js | uglifyjs -mc > ./lib/bundle.js"
+    "build:bundle":"browserify ./lib/coffeeCode.js | uglifyjs -mc > ./lib/bundle.js",
+    "watch:test":"mocha test -u bdd -R min -w"
 
   },
   "jshintConfig": {
