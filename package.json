@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "pretest":"echo 'beforerun'",
     "test": "mocha test -u bdd -R spec",
     "start": "node index.js",
     "start:dev": "node index.js 4000"

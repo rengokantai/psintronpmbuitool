@@ -9,5 +9,9 @@ app.use(function *(){
 
 var port = process.env.PORT || (process.argv[2]||3000);
 
+if(!module.parent) {
+    app.listen();
+}
+
 app.listen(port);
 console.log("start"+ port);
